@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Skills - Kids Online Fun & Skill Games</title>
+    <meta name="description" content="Fun Skills offers a world of kids' online fun and skill games, from exciting puzzles to creative adventures.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --primary-dark: #0056d6;
+            --secondary: #ffbe0b;
+            --accent: #ff006e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --success: #83d487;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7ff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .logo img {
+            height: 32px;
+            margin-right: 8px;
+        }
+        
+        .menu {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .menu a:hover {
+            color: var(--primary);
+        }
+        
+        .right {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn.ghost {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn.ghost:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6eeff 100%);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+        
+        .kudos {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .pill {
+            background-color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Cards */
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat .n {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .stat .t {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section p {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Showcase */
+        .showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .tile {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .tile:hover {
+            transform: translateY(-8px);
+        }
+        
+        .tile img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .cap {
+            padding: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .tile p {
+            text-align: left;
+            margin: 0;
+            padding: 0 16px 16px;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        
+        /* Form */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 159, 28, 0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .showcase {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .menu.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Animation for stats */
+        @keyframes countUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .stat {
+            animation: countUp 0.8s ease-out;
+        }
+        
+        /* News Ticker */
+        .news-ticker {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ticker-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .ticker-item {
+            display: inline-block;
+            margin-right: 40px;
+            font-weight: 500;
+        }
+        
+        /* Featured Articles */
+        .featured {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .featured-main {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-main::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(50px, -50px);
+        }
+        
+        .featured-main h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        
+        .featured-side {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .featured-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .featured-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+       
+    </style>
+</head>
+<body>
+    <script src="assets/js/main.js"></script>
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-content">
+            <span class="ticker-item">🏆 "Puzzle Masters" celebrates 1 million players with new levels.</span>
+            <span class="ticker-item">🎮 "Creative Crafters" update adds new building blocks and friend challenges.</span>
+            <span class="ticker-item">📈 Educational games see a 40% surge in playtime this month.</span>
+            <span class="ticker-item">🚀 "Jungle Jumpers" remains a top-rated skill game for kids.</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="Home"><img src="assets/img/Logo R.png" alt=" Fun Skills icon"><span>Fun Skills</span></a>
+   
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L30 16L16 30L2 16L16 2Z" fill="var(--primary)"/>
+                    <path d="M16 6L26 16L16 26L6 16L16 6Z" fill="var(--secondary)"/>
+                    <circle cx="16" cy="16" r="4" fill="var(--accent)"/>
+                </svg>
+            </a>
+            <div class="menu" id="nav-menu">
+                <a href="index.html" style="opacity:1;font-weight:800">Home</a>
+                <a href="game.html">Play Games</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="faq.html">FAQ</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <div class="right">
+                <button class="btn ghost menu-toggle" id="nav-toggle">Menu</button>
+                <a class="btn" href="game.html">Play Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container grid">
+            <div>
+                <div class="badge">Puzzle Games • Skill Challenges • Creative Play</div>
+                <h1>Fun Skills — Discover Exciting Online Games for Kids</h1>
+                <p>Explore a world of fun and learning. We offer safe and engaging skill games, from brain-teasing puzzles to creative adventures that help kids grow.</p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                    <a class="btn" href="game.html">Explore Fun Games</a>
+                    <a class="btn ghost" href="blog.html">Parent's Corner</a>
+                </div>
+                <div class="kudos">
+                    <span class="pill">🧩 Brain-Boosting Puzzles</span>
+                    <span class="pill">🎨 Creative Challenges</span>
+                    <span class="pill">🏃‍♀️ Fun Skill Games</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="stat"><div class="n">Top 10</div><div class="t">Kids Games</div></div>
+                    </div>
+                    <div class="card">
+                        <div class="stat"><div class="n">100%</div><div class="t">Safe Play</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Games -->
+    <section class="section container">
+        <h2>Featured Games</h2>
+        <p>A look at the games kids are loving right now for their fun and skill-building challenges.</p>
+        
+        <div class="featured">
+            <div class="featured-main">
+                <span class="category-tag">EXCLUSIVE</span>
+                <h3>The Art of Simplicity: Why "Monument Valley" Remains a Masterpiece</h3>
+                <p>We dive into the elegant design, mind-bending puzzles, and serene atmosphere that make this game an unforgettable experience years after its release.</p>
+                <a href="#" class="btn" style="margin-top: 20px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">Read Full Story</a>
+            </div>
+            <div class="featured-side">
+                <div class="featured-item">
+                    <span class="category-tag">LOGIC</span>
+                    <h4>The Enduring Appeal of "Logic Builders"</h4>
+                    <p>How this classic building game continues to attract young thinkers with its deep mechanics and creative focus.</p>
+                </div>
+                <div class="featured-item">
+                    <span class="category-tag">CREATIVE</span>
+                    <h4>"Art Adventures": The Game That Captured Imaginations</h4>
+                    <p>From a simple idea to a world of creativity, we explore how this art game thrived on tablets and phones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spotlight on Game Genres -->
+    <section class="section container">
+        <h2>Spotlight on Fun Genres</h2>
+        <p>Exploring the types of games that have become kid-favorites for fun and learning.</p>
+        <div class="showcase">
+            <div class="tile">
+                <div style="width:100%;height:180px;background:linear-gradient(135deg, #ff9f1c, #2ec4b6);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">🧩</div>
+                <div class="cap">The Puzzle Game Adventure</div>
+                <p>From "Color Match" to "Shape Stackers," discover the clever designs that make puzzle games a fun challenge for kids.</p>
+            </div>
+            <div class="tile">
+                <div style="width:100%;height:180px;background:linear-gradient(135deg, #e71d36, #ff9f1c);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">🏃</div>
+                <div class="cap">The Skill Game Craze</div>
+                <p>We look back at the simple yet exciting formula of games like "Jungle Jumpers" that have kids testing their reflexes for hours.</p>
+            </div>
+            <div class="tile">
+                <div style="width:100%;height:180px;background:linear-gradient(135deg, #4caf50, #ff9f1c);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">🗺️</div>
+                <div class="cap">Creative Worlds in Your Pocket</div>
+                <p>How games like "Block Builders" and "Art Adventures" brought amazing creative experiences to kids' screens.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Insights -->
+    <section class="section container">
+        <div class="card">
+            <h2>Fun & Learning Insights</h2>
+            <p>The world of online kids' games has grown. Here are some key trends that make these games great for learning.</p>
+            <div class="grid-2" style="margin-top:24px">
+                <div>
+                    <h3>The Rise of Free-to-Play Fun</h3>
+                    <p>The free-to-play model made fun games accessible to everyone, offering great experiences without any cost.</p>
+                </div>
+                <div>
+                    <h3>Hyper-Fun Skill Games</h3>
+                    <p>Simple, one-tap games became a huge hit, attracting a massive audience with their instantly fun gameplay.</p>
+                </div>
+            </div>
+            <div class="grid-2" style="margin-top:24px">
+                <div>
+                    <h3>Premium Learning Success</h3>
+                    <p>Critically acclaimed titles like "Math Wizards" and "Word Explorers" proved that parents are happy to invest in quality educational experiences.</p>
+                </div>
+                <div>
+                    <h3>The Social Connection</h3>
+                    <p>Integrating social features, from leaderboards to guilds, became crucial for player retention and building dedicated communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section container">
+        <div class="card">
+            <h2>Join Our Community</h2>
+            <p>What's your kid's favorite online game? Share your thoughts, suggest a game for us to feature, or just say hello!</p>
+            <form id="contact-form" style="max-width:720px;margin:18px auto 0;text-align:left">
+                <div class="form-row">
+                    <div>
+                        <label>Name</label>
+                        <input name="name" required placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input name="email" required type="email" placeholder="you@email.com">
+                    </div>
+                </div>
+                <div style="height:12px"></div>
+                <div>
+                    <label>Message</label>
+                    <textarea name="message" rows="4" placeholder="Tell us about a fun game your kids love and why it's great!"></textarea>
+                </div>
+                <div style="height:18px"></div>
+                <button class="btn" type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+            <div>© 2025 Fun Skills. Celebrating the best in kids' online games.</div>
+            <div style="display:flex;gap:12px;align-items:center">
+                <span class="badge">Responsive • Age-gate</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        });
+        
+        // Simple animation for stats
+        document.addEventListener('DOMContentLoaded', function() {
+            const stats = document.querySelectorAll('.stat');
+            stats.forEach((stat, index) => {
+                stat.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+    
+</body>
+</html>
